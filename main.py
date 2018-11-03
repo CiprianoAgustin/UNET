@@ -20,4 +20,4 @@ model.fit_generator(myGene,steps_per_epoch=300,epochs=1,callbacks=[model_checkpo
 
 testGene = testGenerator(str(sys.argv[2]))
 results = model.predict_generator(testGene,30,verbose=1)
-saveResult(str(sys.argv[2],results))
+saveResult(str(sys.argv[2]),results)
