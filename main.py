@@ -15,7 +15,7 @@ data_gen_args = dict(rotation_range=0.2,
 myGene = trainGenerator(2,str(sys.argv[1]),'image','label',data_gen_args,save_to_dir = str(os.path.join(str(sys.argv[1]),'aug')))
 
 
-model = unet2()
+model = unet()
 model_checkpoint = ModelCheckpoint('unet_lung.hdf5', monitor='loss',verbose=1, save_best_only=True)
 model.fit_generator(myGene,steps_per_epoch=500,epochs=20,callbacks=[model_checkpoint])
 
