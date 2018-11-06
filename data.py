@@ -89,7 +89,6 @@ def testGenerator(test_path,num_image = 30,target_size = (256,256),flag_multi_cl
         img = trans.resize(img,target_size)
         img = np.reshape(img,img.shape+(1,)) if (not flag_multi_class) else img
         img = np.reshape(img,(1,)+img.shape)
-        print(img.shape)
         yield img
 
 
